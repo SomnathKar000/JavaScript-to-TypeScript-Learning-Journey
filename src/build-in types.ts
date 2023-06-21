@@ -18,7 +18,7 @@ const large = 23;
 
 // PascalCase
 
-enum Size {
+const enum Size {
   Small = 0,
   Medium = 12,
   Large = 20,
@@ -27,3 +27,25 @@ enum Size {
 let mySize: Size = Size.Medium;
 
 console.log(mySize);
+
+// Literal types
+
+type Quantity = 500 | 1000;
+
+let quantity: Quantity = 500;
+
+type Metric = "cm" | "inch";
+
+// Nullable types
+
+const greet = (name: string | null | undefined) => {
+  if (name) {
+    console.log("hello" + name);
+  } else {
+    console.log("Hola!");
+  }
+};
+
+greet("somnath");
+greet(null);
+greet(undefined);

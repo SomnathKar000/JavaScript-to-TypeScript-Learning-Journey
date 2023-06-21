@@ -11,12 +11,18 @@ const printValues = (value) => {
 const small = 1;
 const medium = 12;
 const large = 23;
-var Size;
-(function (Size) {
-    Size[Size["Small"] = 0] = "Small";
-    Size[Size["Medium"] = 12] = "Medium";
-    Size[Size["Large"] = 20] = "Large";
-})(Size || (Size = {}));
-let mySize = Size.Medium;
+let mySize = 12;
 console.log(mySize);
+let quantity = 500;
+const greet = (name) => {
+    if (name) {
+        console.log("hello" + name);
+    }
+    else {
+        console.log("Hola!");
+    }
+};
+greet("somnath");
+greet(null);
+greet(undefined);
 //# sourceMappingURL=build-in%20types.js.map
