@@ -15,4 +15,15 @@ let newEmployee = {
         return result;
     },
 };
+const me = {
+    name: "Somnath Kar",
+    age: 22,
+};
+const myId = {
+    name: "Somnath",
+    age: 22,
+    collegename: "ABC College",
+    major: "Computer Science",
+    startYear: 2023,
+};
 //# sourceMappingURL=object.js.map
