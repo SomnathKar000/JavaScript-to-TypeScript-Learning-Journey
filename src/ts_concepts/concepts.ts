@@ -34,7 +34,7 @@ let sum = (num1: number, num2: number, num3?: number) => {
   console.log(num3);
   return num1 + num2;
 };
-sum(2, 5);
+console.log(sum(2, 5));
 
 // Type Aliases
 
