@@ -1,6 +1,6 @@
 let prices2: number[] = [7, 1, 5, 3, 6, 4];
 
-function maxProfit(prices: number[]): number {
+function maxProfit2(prices: number[]): number {
   let maxPrice = 0;
   let temp: number = prices[0];
   for (let i = 0; i < prices.length; i++) {
