@@ -5,6 +5,7 @@ function mergeTwoLists(
   let list: ListNode = new ListNode();
   let temp: ListNode = list;
   while (list1 !== null && list2 !== null) {
+    
     if (list1.val >= list2.val) {
       temp.next = list2;
       list2 = list2.next;
