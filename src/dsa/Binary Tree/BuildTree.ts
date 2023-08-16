@@ -40,21 +40,8 @@ const newBuildTree = (preorder: number[]) => {
   return node;
 };
 
-let str = "";
-
-const preOrder = (node: TreeNode | null) => {
-  if (node === null) {
-    return;
-  }
-  str += node.val;
-  preOrder(node.left);
-  preOrder(node.right);
-  return str;
-};
-
-const preorderData = [1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1];
-const root1 = buildTree(preorderData);
-const root2 = newBuildTree(preorderData);
-console.log(root1);
-console.log(root2);
-console.log(preOrder(root1));
+let preorderData = [1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1];
+let root = buildTree(preorderData);
+console.log(root);
+let root2 = newBuildTree(preorderData);
+let root1 = buildTree(preorderData);
