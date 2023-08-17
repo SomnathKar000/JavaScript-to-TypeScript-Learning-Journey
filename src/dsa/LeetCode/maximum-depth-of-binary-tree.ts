@@ -1,13 +1,9 @@
 function maxDepth(root: TreeNode | null): number {
-  let max = 0;
-  const findDepth = (node: TreeNode | null, depth: number) => {
-    if (node === null) {
-      return;
-    }
-    max = Math.max(depth, max);
-    findDepth(node.left, depth + 1);
-    findDepth(node.right, depth + 1);
-  };
-  findDepth(root, 1);
-  return max;
+  if (root === null) {
+    return 0;
+  }
+  let leftHeight = maxDepth(root.left);
+  let rightHeight = maxDepth(root.right);
+  let height = Math.max(leftHeight, rightHeight) + 1;
+  return height;
 }
