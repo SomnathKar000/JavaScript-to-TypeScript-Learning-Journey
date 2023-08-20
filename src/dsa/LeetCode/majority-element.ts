@@ -3,7 +3,7 @@ function majorityElement(nums: number[]): number {
   let max: { k: number; v: number } = { k: nums[0], v: 0 };
   for (let i = 0; i < nums.length; i++) {
     if (map.has(nums[i])) {
-      let num: number = map.get(nums[i]);
+      let num: number = map.get(nums[i])!;
       num++;
       if (num > max.v) {
         max.v = num;
