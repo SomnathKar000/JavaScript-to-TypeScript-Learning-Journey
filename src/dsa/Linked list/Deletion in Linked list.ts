@@ -1,4 +1,4 @@
-// Delete first
+// Delete first node
 const deleteFirst = (): void => {
   if (head === null) {
     return;
@@ -6,7 +6,7 @@ const deleteFirst = (): void => {
   head = head.next;
 };
 
-// Delete last
+// Delete last node
 const deleteLast = (): void => {
   if (head === null) {
     return;
@@ -24,7 +24,7 @@ const deleteLast = (): void => {
   secondLast.next = null;
 };
 
-// Remove all elements with a specific value
+// Remove all nodes with a specific value
 
 const removeElementsByValue = (value: number): void => {
   let dummyNode = new ListNode();
@@ -38,7 +38,7 @@ const removeElementsByValue = (value: number): void => {
   }
 };
 
-// Using recurtion
+// Remove all nodes with a specific value Using recurtion
 
 const removeElementsByValue2 = (
   head: ListNode | null,
@@ -51,3 +51,24 @@ const removeElementsByValue2 = (
   head.next = removeElementsByValue2(head.next, value);
   return head.val === value ? head.next : head;
 };
+
+// Remove Nth Node From End of List
+
+function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
+  let dummyNode = new ListNode();
+  dummyNode.next = head;
+  let slow = dummyNode;
+  let fast = dummyNode.next;
+  while (n > 0 && fast !== null) {
+    fast = fast.next;
+    n--;
+  }
+
+  while (fast !== null) {
+    fast = fast.next;
+    slow = slow.next!;
+  }
+  slow.next = slow.next!.next;
+
+  return dummyNode.next;
+}
