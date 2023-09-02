@@ -1,23 +1,21 @@
-let s3: string = "AABABBA";
-let k: number = 1;
-
 function characterReplacement(s: string, k: number): number {
   let max: number = 0;
-  let start: number = 0;
-  let count: number = 0;
+  let l: number = 0,
+    r: number = 0;
+  let map = new Map<string, number>();
+  let maxChar = 0;
 
-  for (let i: number = 0; i < s.length; i++) {
-    if (s[i] == s[start]) {
-      count++;
+  while (r < s.length) {
+    let charR = s[r];
+    map.set(charR, (map.get(charR) || 0) + 1);
+    maxChar = Math.max(maxChar, map.get(charR)!);
+    if (r - l + 1 - maxChar > k) {
+      let v = map.get(s[l])!;
+      map.set(s[l], v - 1);
+      l++;
     }
-    if (count > k) {
-      start = i;
-      count = 0;
-    }
-    max = Math.max(max, i - start + 1);
+    max = Math.max(r - l + 1, max);
+    r++;
   }
-
   return max;
 }
-
-console.log(characterReplacement(s3, k));
