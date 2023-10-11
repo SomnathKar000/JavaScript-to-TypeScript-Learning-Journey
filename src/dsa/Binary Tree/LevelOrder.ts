@@ -31,4 +31,22 @@ const levelOrder = (node: TreeNode | null) => {
   }
 };
 
+const levelOrder3 = (root: TreeNode | null): string => {
+  let string = "";
+  let queue: (TreeNode | null)[] = [root];
+  while (queue.length) {
+    let n = queue.length;
+    let str = "";
+    for (let i = 0; i < n; i++) {
+      const node = queue.shift();
+      str += node?.val;
+      if (node?.left) queue.push(node.left);
+      if (node?.right) queue.push(node.right);
+    }
+    string += str + "\n";
+  }
+
+  return string;
+};
+
 levelOrder(root);
