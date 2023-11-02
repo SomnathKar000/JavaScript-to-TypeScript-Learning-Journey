@@ -17,7 +17,7 @@ const isIdentical = (
   );
 };
 
-function isSubtree(root: TreeNode | null, subRoot: TreeNode | null): boolean {
+function isSubtree2(root: TreeNode | null, subRoot: TreeNode | null): boolean {
   if (root === null) {
     return false;
   }
