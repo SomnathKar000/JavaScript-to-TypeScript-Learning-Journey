@@ -7,6 +7,7 @@ function findDifferentBinaryString(nums: string[]): string {
   const n = nums[0].length;
   for (let i = 0; i <= nums.length; i++)
     if (!set.has(i)) return i.toString(2).padStart(n, "0");
+  return "";
 }
 
 function generateBinaryStrings(n: number, str: string = ""): string[] {
