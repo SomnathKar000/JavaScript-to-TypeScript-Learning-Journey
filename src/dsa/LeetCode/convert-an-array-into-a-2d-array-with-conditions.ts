@@ -1,13 +1,15 @@
 function findMatrix(nums: number[]): number[][] {
-  let res: number[][] = [];
-
+  let res: number[][] = [[]];
+  let map = new Map<number, number>();
   for (const num of nums) {
-    for (let i = 0; i <= res.length; i++) {
-      if (res[i] === undefined) {
-        res.push([num]);
-      } else if (!res[i].includes(num)) {
-        res[i].push(num);
-      }
+    let occ = (map.get(num) || 0) + 1;
+    map.set(num, occ);
+  }
+
+  for (let [num, occ] of map) {
+    while (occ !== 0) {
+      res[occ - 1].push(num);
+      occ--;
     }
   }
 
