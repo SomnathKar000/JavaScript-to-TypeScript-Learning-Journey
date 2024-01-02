@@ -8,6 +8,7 @@ function findMatrix(nums: number[]): number[][] {
 
   for (let [num, occ] of map) {
     while (occ !== 0) {
+      if (res[occ - 1] === undefined) res[occ - 1] = [];
       res[occ - 1].push(num);
       occ--;
     }
